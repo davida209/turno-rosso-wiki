@@ -57,4 +57,25 @@ git push -u origin main
 
 Para conservar https://prototipo-wiki-ten.vercel.app/, conecta el nuevo repositorio al mismo proyecto de Vercel. Usa Vite, npm ci, npm run build y salida dist. vercel.json resuelve las rutas /inicio, /mecanicas, /marcador y /personajes. La navegación interna también usa fragmentos para permitir la recarga local.
 
-No incluye el juego ejecutable ni un backend. Los archivos del sitio anterior son una referencia de contenido y arte, no una recuperación de su repositorio.
+No incluye el juego ejecutable ni un backend. Los archivos del sitio anterior son una referencia de contenido y arte, no una recuperación de su repositorio.## Repositorio y demo
+
+- [Ver demo](https://prototipo-wiki-ten.vercel.app/)
+- [Ver código](https://github.com/davida209/turno-rosso-wiki)
+- [Portafolio de Lester David](https://portfoliolester.vercel.app/)
+
+## Git y despliegue
+
+```bash
+git clone https://github.com/davida209/turno-rosso-wiki.git
+cd turno-rosso-wiki
+npm ci
+npm run dev
+```
+
+El repositorio está conectado a su proyecto de Vercel. Los cambios en `main` activan un despliegue automático. GitHub Actions valida las pruebas y la compilación en cambios de `main` y `develop`, y en pull requests.
+
+Configuración: framework Vite, instalación `npm ci`, compilación `npm run build`, salida `dist`. No requiere variables de entorno. No subas `node_modules`, `dist`, `.env` ni `.vercel`; `.gitignore` ya los excluye.
+
+Antes de subir cambios, ejecuta `npm test` y `npm run build`. Usa ramas `feature/*` y pull requests para revisar cambios. Conserva el proyecto de Vercel existente para mantener su dirección pública.
+
+
