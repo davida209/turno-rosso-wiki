@@ -1,0 +1,30 @@
+.home-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.home-tile {
+  display: block;
+  background: var(--navy-soft);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--rosso);
+  padding: 16px 18px;
+}
+
+.home-tile.accent-gold {
+  border-left-color: var(--gold);
+}
+
+.home-tile h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.home-tile p {
+  font-size: 13px;
+  color: var(--cream-dim);
+  margin-top: 5px;
+  line-height: 1.45;
+}
