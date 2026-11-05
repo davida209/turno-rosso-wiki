@@ -1,10 +1,7 @@
 # Identidad visual
 
-Wiki complementaria del juego: guía de tienda nocturna, objetivos, personajes y marcador.
+Paleta del proyecto Unity TurnoRosso-Visual-URP (generate_art.py): tinta #172420, pino #1a3229, crema #fbf5e6, dorado #d8b24c y rojo Rosso #a83226.
 
-- Tipografía: Bebas Neue e IBM Plex Sans.
-- Paleta: Azul marino, rojo Rosso, amarillo y crema.
-- Fuentes incluidas localmente en public/fonts, con sus licencias OFL.
-- Diseño adaptable con controles de teclado y movimiento reducido.
+Aplicación React con portada, inicio, marcador, seis mecánicas ilustradas y visor de seis personajes con cuatro vistas, caminata, arrastre, teclado y giro automático.
 
-Los estilos de este proyecto se mantienen en src/style.css y no dependen de las otras demos.
+Estilos globales: src/index.css. Estilos de cada página: src/pages. Las rutas directas usan la reescritura de vercel.json.

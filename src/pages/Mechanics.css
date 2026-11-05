@@ -1,0 +1,22 @@
+.mechanics-intro{font-size:13px;line-height:1.6;margin-top:7px;color:var(--cream)}
+.mechanics-list{display:flex;flex-direction:column;gap:22px}
+.mechanic-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--navy-soft)}
+.mechanic-art{height:195px;position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% 100%,#d8b24c22,transparent 70%),linear-gradient(140deg,#2a4437,#192b23);border-bottom:1px solid var(--line)}
+.mechanic-category{position:absolute;top:14px;left:16px;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold)}
+.mechanic-number{position:absolute;right:16px;top:10px;font-family:var(--font-display);font-size:26px;color:#fbf5e638}
+.mechanic-sprites{position:absolute;inset:40px 16px 15px;display:flex;align-items:flex-end;justify-content:center;gap:16px}
+.mechanic-sprites:before{content:'';position:absolute;bottom:-4px;left:8%;right:8%;height:30px;border-radius:50%;background:#0003;z-index:-1}
+.mechanic-sprite{height:130px;max-width:48%;object-fit:contain;filter:drop-shadow(0 6px 5px #0003)}
+.mechanic-reponer .sprite-0{height:80px;width:85px}
+.mechanic-reponer .sprite-1,.mechanic-auditoria .sprite-1{width:170px;height:125px}
+.mechanic-limpieza .sprite-0{height:135px;width:85px}
+.mechanic-limpieza .sprite-1{height:105px;width:100px}
+.mechanic-ladron .sprite-1{height:90px;width:130px}
+.mechanic-clientes .mechanic-sprite{max-width:30%;height:125px}
+.mechanic-clientes .sprite-1{height:137px}
+.mechanic-entry{padding:18px}
+.mechanic-entry h2{font-size:25px;color:var(--cream)}
+.mechanic-entry>p{font-size:13px;color:var(--cream-dim);margin-top:7px;line-height:1.75}
+.mechanic-tip{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
+.mechanic-tip>span{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.mechanic-tip p{font-size:12px;line-height:1.6;color:var(--cream-dim);margin-top:5px}
