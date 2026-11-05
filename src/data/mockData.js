@@ -1,6 +1,5 @@
-// Datos de ejemplo. Cuando exista el backend real, estas funciones se
-// reemplazan por llamadas fetch/axios a la API sin tocar los componentes
-// que las consumen (todos reciben los datos ya resueltos).
+// Contenido editorial de la guía. Las notas, perfiles y resultados se consultan
+// mediante Supabase en src/lib/cloud.js; este archivo no contiene puntuaciones.
 
 export const mechanics = [
   {
@@ -66,12 +65,4 @@ export const characters = [
     role: 'Auditor',
     description: 'Realiza inspecciones sorpresa y multa la mala gestión de la tienda.',
   },
-]
-
-export const leaderboard = [
-  { rank: 1, name: 'Les', score: 1240, result: 'gano' },
-  { rank: 2, name: 'Ana', score: 980, result: 'gano' },
-  { rank: 3, name: 'Marco', score: 760, result: 'perdio' },
-  { rank: 4, name: 'Fer', score: 540, result: 'perdio' },
-  { rank: 5, name: 'Dani', score: 410, result: 'perdio' },
 ]
