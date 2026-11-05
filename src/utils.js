@@ -74,7 +74,7 @@ export function shell({ brand, mark, nav, action = "", dark = false }) {
   return `<a class="skip" href="#main">Saltar al contenido</a><div class="demo-bar"><span>PORTAFOLIO / LESTER DAVID</span><span>DEMO INTERACTIVA · DATOS LOCALES</span></div><header class="header ${dark ? "dark" : ""}"><a class="brand" href="#"><span class="brand-mark">${mark}</span>${brand}</a><button class="menu-btn" aria-label="Abrir navegación" aria-expanded="false" aria-controls="navigation">☰</button><nav id="navigation">${nav}${action}</nav></header>`;
 }
 export function footer(brand, key) {
-  return `<footer><div><strong>${brand}</strong><p>Una demo de Lester David Uicab Gongora.</p></div><p>Datos de ejemplo · Sin transacciones reales<br><a href="https://portfoliolester.vercel.app/" target="_blank" rel="noopener noreferrer">Ver portafolio ↗</a><br><button class="reset-demo" data-reset="${esc(key)}">Reiniciar demo</button></p></footer>`;
+  return `<footer><div><strong>${brand}</strong><p>Una demo de Lester David Uicab Gongora.</p></div><p>Datos de ejemplo · Sin transacciones reales<br><button class="reset-demo" data-reset="${esc(key)}">Reiniciar demo</button></p></footer>`;
 }
 export function bindMenu() {
   const reset = document.querySelector("[data-reset]");

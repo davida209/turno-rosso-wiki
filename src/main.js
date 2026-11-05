@@ -44,7 +44,7 @@ function render() {
       )
       .join(
         "",
-      )}</nav><div class="sidebar-game"><span class="store-status"></span> TIENDA EN TURNO NOCTURNO</div><div class="sidebar-bottom"><p>DEMO COMPLEMENTARIA</p><span>Notas, objetivos y resultados locales.</span><button id="reset-wiki">Reiniciar mis datos</button><a href="https://portfoliolester.vercel.app/" target="_blank" rel="noopener noreferrer">Portafolio de Lester David ↗</a></div></aside><main id="main" class="wiki-main"><div class="wiki-topbar"><span>TURNO ROSSO / ${page.toUpperCase()}</span><button id="practice" class="wiki-button">Practicar un turno ↗</button></div><div class="page-heading"><p>${pages[page][0]}</p><h1>${pages[page][1]}</h1></div><div id="page-content"></div><footer class="wiki-footer"><span>APP COMPLEMENTARIA / TURNO ROSSO</span><span>Modo demo · Sin conexión al juego</span></footer></main></div>`;
+      )}</nav><div class="sidebar-game"><span class="store-status"></span> TIENDA EN TURNO NOCTURNO</div><div class="sidebar-bottom"><p>DEMO COMPLEMENTARIA</p><span>Notas, objetivos y resultados locales.</span><button id="reset-wiki">Reiniciar mis datos</button></div></aside><main id="main" class="wiki-main"><div class="wiki-topbar"><span>TURNO ROSSO / ${page.toUpperCase()}</span><button id="practice" class="wiki-button">Practicar un turno ↗</button></div><div class="page-heading"><p>${pages[page][0]}</p><h1>${pages[page][1]}</h1></div><div id="page-content"></div><footer class="wiki-footer"><span>APP COMPLEMENTARIA / TURNO ROSSO</span><span>Modo demo · Sin conexión al juego</span></footer></main></div>`;
   document.querySelector("#practice").onclick = practice;
   document.querySelector("#reset-wiki").onclick = () => {
     const el = modal(
