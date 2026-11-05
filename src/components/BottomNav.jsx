@@ -6,9 +6,11 @@ const links = [
   { to: '/mecanicas', label: 'Mecánicas', icon: 'gear' },
   { to: '/marcador', label: 'Marcador', icon: 'bars' },
   { to: '/personajes', label: 'Personajes', icon: 'ring' },
+  { to: '/notas', label: 'Notas', icon: 'notes' },
 ]
 
 function Icon({ name }) {
+  if (name === 'notes') return <span className="icon icon-notes" aria-hidden="true">▤</span>
   if (name === 'home') {
     return <span className="icon icon-home" />
   }
