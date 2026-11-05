@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+@font-face{font-family:'Bebas Neue';src:url('/fonts/font-01.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/fonts/font-02.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/fonts/font-04.ttf') format('truetype');font-weight:600 900;font-display:swap}
 
 :root {
   --navy: #172420;
@@ -12,7 +14,7 @@
   --line-dark: rgba(23, 36, 32, 0.12);
 
   --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
 }
 
 * {
