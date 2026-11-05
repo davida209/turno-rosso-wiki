@@ -21,3 +21,9 @@ Validación: siete pruebas de recursos; compilación de producción; 24 vistas y
 - Ranking e historial conectados a la API, búsquedas, filtros y estadísticas, sin datos ficticios.
 - Notificaciones locales, suscripción Web Push y recordatorio diario mediante cron protegido.
 - Contrato documentado para una futura integración de Unity; el juego no se modificó.
+
+## 1.2.1
+
+- Corrige Site URL y Redirect URLs de Supabase para devolver los correos de confirmación y recuperación a la PWA pública.
+- Añade una prueba de enlaces reales de Auth, cambio de contraseña de cuenta temporal y rechazo de redirecciones no autorizadas.
+- Actualiza la documentación para cerrar el pendiente de configuración de correos.

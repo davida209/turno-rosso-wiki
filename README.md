@@ -40,12 +40,13 @@ En Supabase → Authentication → URL Configuration:
 - Site URL: https://prototipo-wiki-ten.vercel.app
 - Redirect URLs: https://prototipo-wiki-ten.vercel.app/cuenta
 
-La confirmación de correo está habilitada. Mantenerla habilitada. Verificar estas URLs antes de presentar el registro y la recuperación. Para desarrollo, añadir solo las URLs localhost que se utilicen.
+Estas URLs ya están configuradas y verificadas. La confirmación de correo está habilitada y se mantiene habilitada. Para desarrollo, añadir solo las URLs localhost que se utilicen.
 
 ## Verificación
 
 - npm test: inventario de sprites, búsqueda de notas y validación de destinos push.
 - npm run build: aplicación y service worker de producción.
+- node scripts/check-auth.mjs: valida confirmación, recuperación y rechazo de redirecciones externas con una cuenta temporal, sin enviar correos. Requiere las variables de servidor en .env.local.
 - node scripts/check-cloud.mjs: prueba real de Auth, GET/POST/PATCH/DELETE y aislamiento. Crea cuentas temporales de prueba y las elimina al terminar; requiere las variables de servidor en .env.local.
 - node scripts/check-cloud.mjs --keep-one: prepara una cuenta desechable para la prueba de navegador, guardada fuera del repositorio en work/cloud-test.json.
 - node scripts/check-browser.cjs: instalación, offline, imágenes, notas, sincronización, perfil y pantallas. Requiere un servidor preview en 4174 y la cuenta anterior; usa Edge instalado. PWA_TEST_URL permite probar otro origen. PWA_BROWSER permite elegir otro canal compatible.
@@ -54,7 +55,7 @@ GitHub Actions ejecuta npm ci, npm test y npm run build en main/develop. Las pru
 
 ## Gitflow
 
-feature/* → develop → release/* → main, etiqueta de versión y fusión de la release de vuelta a develop. Vercel publica main. No trabajar sobre prototipo-wiki: aquel repositorio fue la fuente de la migración.
+feature/* → develop → release/* → main, etiqueta de versión y fusión de la release de vuelta a develop. Los hotfix/* salen de main y se fusionan de vuelta a main y develop. Vercel publica main. No trabajar sobre prototipo-wiki: aquel repositorio fue la fuente de la migración.
 
 ## Unity
 

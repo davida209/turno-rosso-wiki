@@ -1,4 +1,4 @@
-# Validación de la release 1.2.0
+# Validación de las releases 1.2.0 y 1.2.1
 
 Pruebas completadas:
 
@@ -16,10 +16,17 @@ Pruebas completadas:
 - Funciones desplegadas de suscripciones y recordatorios: autenticación, validación, preferencias y cron protegido. Las pruebas sintéticas no enviaron push a proveedores externos.
 - Comprobación de que las claves privadas no aparecen en el bundle.
 
-Pendientes externos o que requieren dispositivo real:
+Configuración de autenticación resuelta en 1.2.1:
 
-1. URL Configuration de Supabase. Se verificó generando enlaces de recuperación para una cuenta temporal, sin enviar correos: tanto el enlace predeterminado como el solicitado para la PWA terminan en http://localhost:3000. Hay que cambiar Site URL y Redirect URLs por los indicados en README antes de considerar verificados el registro por correo y la recuperación. El conector disponible administra datos, pero no expone esta configuración; el panel requiere sesión de usuario.
-2. Recepción real de un push con la PWA cerrada en cada plataforma objetivo. El servidor, suscripciones y cron están desplegados; probar en un dispositivo que pueda generar una suscripción real y permita notificaciones.
-3. Unity: autenticación dentro del juego e ingesta/validación de partidas. No forman parte de esta entrega de PWA; ver UNITY-HANDOFF.md.
+- Site URL: https://prototipo-wiki-ten.vercel.app
+- Única Redirect URL autorizada: https://prototipo-wiki-ten.vercel.app/cuenta
+- Verificados enlaces reales de confirmación de registro y recuperación, consumo del enlace, cambio de contraseña de una cuenta desechable e inicio de sesión posterior. Los enlaces se generaron mediante administración sin enviar correos.
+- Verificado que una redirección externa no autorizada vuelve a la URL pública.
+- Cuenta temporal eliminada tras la prueba. La entrega efectiva de correo debe probarse con el buzón del usuario.
 
-La protección adicional contra contraseñas filtradas aparece desactivada en el proveedor. No se cambió la configuración de autenticación sin acceso al panel. Referencia: https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
+Pendientes que requieren dispositivo real o el trabajo posterior de Unity:
+
+1. Recepción real de un push con la PWA cerrada en cada plataforma objetivo. El servidor, suscripciones y cron están desplegados; probar en un dispositivo que pueda generar una suscripción real y permita notificaciones.
+2. Unity: autenticación dentro del juego e ingesta/validación de partidas. No forman parte de esta entrega de PWA; ver UNITY-HANDOFF.md.
+
+La protección adicional contra contraseñas filtradas aparece desactivada en el proveedor. No se desactivó la confirmación de correo ni se amplió la lista de redirecciones con comodines. Referencia: https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
