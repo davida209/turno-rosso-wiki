@@ -1,6 +1,9 @@
 # Recursos de Turno Rosso
 
-- Portada: recurso visible en la wiki original de Lester David: https://prototipo-wiki-ten.vercel.app/assets/portada-tienda-9G0kpiQl.jpg
-- Sprite del encargado: Player_Static.png, recursos locales Sprites_TR/Player_Mov de Lester David. Se muestra mediante un recorte CSS de la hoja, conservando el archivo original.
-- Contenido: mecánicas y personajes de la wiki original de Turno Rosso, con explicaciones de apoyo y práctica de demostración.
-- Fuentes: Bebas Neue e IBM Plex Sans; licencias OFL incluidas en public/fonts.
+- Personajes: sprites originales de Sprites Turno Rosso - Referencia, incluidos en src/assets/personajes.
+- Mecánicas: objetos de TurnoRosso-Visual-URP, incluidos en src/assets/mecanicas.
+- Portada y mockups: importados de davida209/prototipo-wiki.
+- Paleta: constantes de generate_art.py del proyecto Unity.
+- Tipografía: Bebas Neue e Inter mediante Google Fonts. Se conservan las fuentes locales y licencias previamente incluidas en public/fonts.
+
+Los recursos se sirven desde este repositorio sin depender de OneDrive.

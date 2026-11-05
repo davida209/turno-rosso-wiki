@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #172420;
+  --navy-soft: #1a3229;
+  --rosso: #a83226;
+  --rosso-dark: #86271e;
+  --gold: #d8b24c;
+  --cream: #fbf5e6;
+  --cream-dim: rgba(251, 245, 230, 0.68);
+  --line: rgba(251, 245, 230, 0.14);
+  --line-dark: rgba(23, 36, 32, 0.12);
+
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px));
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  background: var(--rosso);
+  color: var(--cream);
+  padding: calc(env(safe-area-inset-top, 0px) + 20px) 24px 22px;
+  flex-shrink: 0;
+}
+
+.page-header .eyebrow {
+  font-size: 13px;
+  color: var(--cream-dim);
+  margin-bottom: 2px;
+}
+
+.page-header h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px 24px 24px;
+}
+
+.rule {
+  height: 1px;
+  background: var(--line-dark);
+  margin: 14px 0;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 15px;
+  padding: 3px 10px 3px 16px;
+  border-radius: 3px 9px 9px 3px;
+  position: relative;
+  min-width: 26px;
+  justify-content: center;
+}
+
+.tag-chip::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--navy);
+}
