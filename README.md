@@ -1,25 +1,29 @@
 # Turno Rosso PWA
 
-Guía instalable con personajes giratorios, mecánicas ilustradas y un simulador de decisiones.
+Guía instalable con personajes giratorios, mecánicas ilustradas y reportes de la guía y del juego.
 
-Producción [Turno Rosso](https://prototipo-wiki-ten.vercel.app).
+[Producción](https://prototipo-wiki-ten.vercel.app).
 
-## Simular un turno
+## Reportes
 
-Elige un escenario y dos acciones en orden. El simulador muestra sus efectos en seguridad, ventas y satisfacción, y enlaza las mecánicas relacionadas. Puedes guardar un plan, abrirlo para editarlo, buscarlo o eliminarlo. Al elegir otro plan del mismo escenario, se comparan sus indicadores.
+En Reportes puedes describir un problema de la guía o una situación del juego. Cada mecánica incluye un enlace que rellena la sección del formulario. Mis reportes permite consultar el estado, editar el contenido y retirar un reporte. Editar el contenido devuelve su estado a Nuevo para que se revise la versión actual.
 
-La guía y las simulaciones funcionan offline después de la primera descarga. Guardar, consultar y modificar los planes requiere conexión. La API vincula los planes a una cookie privada del navegador. Borrarla o cambiar de navegador impide recuperar los planes anteriores.
+Los reportes se vinculan a una cookie privada del navegador. Cambiar de navegador o borrar las cookies impide recuperar su acceso. El servicio de reportes requiere conexión. La guía, los personajes y sus imágenes están disponibles offline después de la primera descarga.
 
-Desde Ajustes puedes instalar la PWA y enviar una notificación de prueba.
+## Bandeja privada
+
+Abre [Revisión de reportes](https://prototipo-wiki-ten.vercel.app/revision) o usa Ajustes → Panel de revisión. La bandeja lista reportes de ambos orígenes y permite filtrar y actualizar sus estados.
+
+La clave se configura en Vercel como REPORT_ADMIN_KEY, variable exclusiva del servidor. Se envía en la cabecera Authorization y permanece en memoria mientras la bandeja está abierta. Mantén la clave fuera del repositorio y del código público.
 
 ## API
 
-La función de Vercel en /api/plans admite GET para listar, POST para crear, PATCH para editar y DELETE para eliminar. PATCH y DELETE reciben el parámetro id. El servidor valida las dos decisiones, filtra cada operación por navegador y almacena los planes en Supabase. La tabla simulator_plans tiene RLS y solo permite acceso a service_role.
+/api/reports admite GET, POST, PATCH y DELETE. PATCH y DELETE reciben el parámetro id. Las operaciones del visitante se limitan a su navegador. GET y PATCH con admin=1 requieren la clave de revisión. PATCH de revisión solo modifica el estado.
 
-Vercel suministra SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY mediante su integración. Esas variables son exclusivas del servidor. La migración del simulador está en supabase/migrations.
+Vercel suministra SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY mediante la integración. La tabla wiki_reports tiene RLS y permisos de acceso solo para service_role. La migración está en supabase/migrations.
 
-## Desarrollo y pruebas
+## Desarrollo
 
-Node.js 22.12 o superior. Ejecuta npm ci y npm run dev para trabajar en la interfaz. Para probar la API, usa un despliegue de Vercel con Supabase conectado o vercel dev con las variables del servidor. npm test verifica los recursos y la lógica del simulador. npm run build genera el sitio y el service worker. Para verificar el modo offline local, sirve el resultado con npm run preview.
+Node.js 22.12 o superior. Usa npm ci y npm run dev para la interfaz, y vercel dev con las variables del servidor para la API. npm test verifica los recursos. npm run build genera el sitio y el service worker. Puedes instalar la PWA y probar una notificación desde Ajustes.
 
-Gitflow usa ramas feature, develop, release y main. Los hotfix salen de main y se fusionan de vuelta a main y develop. Vercel publica main.
+Gitflow usa ramas feature, develop, release y main. Vercel publica main.

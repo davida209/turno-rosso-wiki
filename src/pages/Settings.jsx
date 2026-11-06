@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { requestNotifications, showLocalNotification } from '../lib/notifications.js'
 
@@ -30,7 +31,7 @@ export default function Settings() {
     setBusy(true)
     try {
       await requestNotifications()
-      await showLocalNotification('Turno Rosso', 'Tu próximo escenario te espera en el simulador.', '/simulador')
+      await showLocalNotification('Turno Rosso', 'Puedes consultar tus reportes en Turno Rosso.', '/reportes')
       setNotice('Notificación enviada al dispositivo.')
     } catch (error) {
       setNotice(error.message)
@@ -48,7 +49,7 @@ export default function Settings() {
           {installed ? <p>La aplicación está instalada.</p> : installPrompt
             ? <button className="primary-button" onClick={install}>Instalar aplicación</button>
             : <p>En Android o escritorio, busca «Instalar aplicación» en el menú del navegador. En iPhone, usa Compartir y Añadir a pantalla de inicio.</p>}
-          <p className="muted">La guía y el simulador funcionan sin conexión después de la primera descarga.</p>
+          <p className="muted">La guía funciona sin conexión después de la primera descarga.</p>
         </section>
         <section className="panel stack">
           <h2>Notificaciones</h2>
@@ -57,8 +58,9 @@ export default function Settings() {
           {notice && <p role="status" className="feedback">{notice}</p>}
         </section>
         <section className="panel stack">
-          <h2>Planes guardados</h2>
-          <p>Tus planes se guardan en línea y se vinculan con este navegador. Si borras las cookies del sitio o cambias de navegador, perderás el acceso a esos planes.</p>
+          <h2>Reportes</h2>
+          <p>Tus reportes se vinculan con este navegador. Si borras las cookies del sitio o cambias de navegador, perderás acceso a los reportes que enviaste aquí.</p>
+          <Link className="text-button" to="/revision">Panel de revisión</Link>
         </section>
       </div>
     </div>
