@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import coverImage from '../assets/portada-tienda.jpg'
 import './Welcome.css'
 
@@ -22,13 +22,12 @@ export default function Welcome() {
         </h1>
         <h2 className="welcome-subtitle">Wiki</h2>
         <p className="welcome-tagline">
-          Mecánicas, objetivos del día y el marcador global de todos los que ya
-          trabajaron su turno.
+          Explora los personajes y las mecánicas de la tienda. Reporta lo que encuentres en la guía o durante una partida.
         </p>
         <button className="welcome-cta" onClick={() => navigate('/inicio')}>
-          Entrar como invitado
+          Comenzar
         </button>
-        <p className="welcome-footnote">Versión 1.1 - App complementaria de Turno Rosso</p>
+        <p className="welcome-footnote">Guía de Turno Rosso</p>
       </div>
     </div>
   )
