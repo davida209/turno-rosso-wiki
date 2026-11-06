@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Turno Rosso · Guía del encargado",
   "short_name": "Turno Rosso",
-  "description": "Guía y simulador de turnos de Turno Rosso, también sin conexión.",
+  "description": "Guía de Turno Rosso con mecánicas, personajes y reportes.",
   "lang": "es",
   "start_url": "/inicio",
   "scope": "/",
@@ -35,8 +35,8 @@
   ],
   "shortcuts": [
     {
-      "name": "Simulador de turnos",
-      "url": "/simulador"
+      "name": "Reportar un problema",
+      "url": "/reportes"
     },
     {
       "name": "Personajes",

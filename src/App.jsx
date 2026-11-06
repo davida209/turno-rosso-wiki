@@ -3,7 +3,7 @@ import AppLayout from './components/AppLayout.jsx'
 import Home from './pages/Home.jsx'
 import Mechanics from './pages/Mechanics.jsx'
 import Characters from './pages/Characters.jsx'
-import Simulator from './pages/Simulator.jsx'
+import Reports, { ReportReview } from './pages/Reports.jsx'
 import Settings from './pages/Settings.jsx'
 
 export default function App() {
@@ -14,11 +14,13 @@ export default function App() {
         <Route path="/inicio" element={<Home />} />
         <Route path="/mecanicas" element={<Mechanics />} />
         <Route path="/personajes" element={<Characters />} />
-        <Route path="/simulador" element={<Simulator />} />
+        <Route path="/reportes" element={<Reports />} />
+        <Route path="/revision" element={<ReportReview />} />
+        <Route path="/simulador" element={<Navigate to="/reportes" replace />} />
         <Route path="/ajustes" element={<Settings />} />
         <Route path="/cuenta" element={<Navigate to="/ajustes" replace />} />
-        <Route path="/marcador" element={<Navigate to="/simulador" replace />} />
-        <Route path="/notas" element={<Navigate to="/simulador" replace />} />
+        <Route path="/marcador" element={<Navigate to="/reportes" replace />} />
+        <Route path="/notas" element={<Navigate to="/reportes" replace />} />
         <Route path="*" element={<Navigate to="/inicio" replace />} />
       </Route>
     </Routes>

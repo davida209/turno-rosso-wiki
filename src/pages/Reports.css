@@ -1,0 +1,7 @@
+.report-fields { margin: 0; padding: 0; border: 0; min-width: 0; }
+.report-card { overflow-wrap: anywhere; }
+.report-card p { white-space: pre-wrap; }
+.report-state { flex-shrink: 0; border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; font-size: 11px; }
+.report-state[data-state="nuevo"] { color: var(--gold); }
+.report-state[data-state="revision"] { color: #a9cee9; }
+.report-state[data-state="resuelto"] { color: #b1deac; }
