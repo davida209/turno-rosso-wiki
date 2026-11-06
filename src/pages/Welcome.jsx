@@ -13,7 +13,6 @@ export default function Welcome() {
       </div>
 
       <div className="welcome-body">
-        <img className="studio-logo" src="/logo-rosso.png" alt="Rosso Games" />
         <span className="welcome-badge">Guía del encargado</span>
         <h1 className="welcome-title">
           Turno
@@ -27,7 +26,7 @@ export default function Welcome() {
         <button className="welcome-cta" onClick={() => navigate('/inicio')}>
           Comenzar
         </button>
-        <p className="welcome-footnote">Guía de Turno Rosso</p>
+        <img className="welcome-studio-logo" src="/logo-rosso.png" alt="Rosso Games" />
       </div>
     </div>
   )
