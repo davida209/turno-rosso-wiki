@@ -25,10 +25,12 @@ const tiles = [
 export default function Home() {
   return (
     <div className="page">
-      <header className="page-header">
+      <header className="page-header home-header">
+        <div>
+          <p className="eyebrow">Guía del encargado</p>
+          <h1>Turno Rosso Wiki</h1>
+        </div>
         <img className="home-brand" src="/logo-rosso.png" alt="Rosso Games" />
-        <p className="eyebrow">Guía del encargado</p>
-        <h1>Turno Rosso Wiki</h1>
       </header>
 
       <div className="page-content">
