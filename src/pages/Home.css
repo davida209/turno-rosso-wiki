@@ -29,4 +29,16 @@
   line-height: 1.45;
 }
 
-.home-brand { display: block; width: 110px; height: auto; margin-bottom: 12px; }
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.home-brand {
+  display: block;
+  flex-shrink: 0;
+  width: 62px;
+  height: auto;
+}
