@@ -34,3 +34,10 @@ Validación: siete pruebas de recursos; compilación de producción; 24 vistas y
 - Añade tres escenarios con decisiones en orden, efectos, repaso de mecánicas y comparación de estrategias.
 - Guarda planes por navegador con GET, POST, PATCH y DELETE en Supabase.
 - Agrupa la instalación y la prueba de notificaciones en Ajustes.
+
+## 1.4.0
+
+- Sustituye el simulador por reportes de la guía y del juego.
+- Añade creación, consulta, edición y retiro por navegador con Supabase.
+- Añade una bandeja privada con filtros y estados de revisión.
+- Permite reportar directamente desde cada mecánica.

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { mechanics } from '../data/mockData.js'
 import shelf from '../assets/mecanicas/Estante_ConProductos.png'
 import box from '../assets/mecanicas/Caja_Carton.png'
@@ -49,6 +49,7 @@ export default function Mechanics() {
                 <h2 id={`mechanic-${item.id}`}>{item.title}</h2>
                 <p>{item.description}</p>
                 <div className="mechanic-tip"><span>Consejo de turno</span><p>{art.tip}</p></div>
+                <Link className="text-button" to={"/reportes?seccion=" + encodeURIComponent(item.title)}>Reportar sobre esta sección</Link>
               </div>
             </article>
           )

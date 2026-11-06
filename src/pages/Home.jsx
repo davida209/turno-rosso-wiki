@@ -3,9 +3,9 @@ import './Home.css'
 
 const tiles = [
   {
-    to: '/simulador',
-    title: 'Simulador de turnos',
-    description: 'Prueba decisiones bajo presión y compara tus estrategias.',
+    to: '/reportes',
+    title: 'Reportar un problema',
+    description: 'Cuéntanos qué encontraste en la guía o durante una partida.',
     accent: 'gold',
   },
   {

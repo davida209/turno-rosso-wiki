@@ -5,7 +5,7 @@ const links = [
   { to: '/inicio', label: 'Inicio', icon: 'home' },
   { to: '/mecanicas', label: 'Mecánicas', icon: 'gear' },
   { to: '/personajes', label: 'Personajes', icon: 'ring' },
-  { to: '/simulador', label: 'Simulador', icon: 'bars' },
+  { to: '/reportes', label: 'Reportes', icon: 'bars' },
 ]
 
 function Icon({ name }) {
