@@ -27,3 +27,10 @@ Validación: siete pruebas de recursos; compilación de producción; 24 vistas y
 - Corrige Site URL y Redirect URLs de Supabase para devolver los correos de confirmación y recuperación a la PWA pública.
 - Añade una prueba de enlaces reales de Auth, cambio de contraseña de cuenta temporal y rechazo de redirecciones no autorizadas.
 - Actualiza la documentación para cerrar el pendiente de configuración de correos.
+
+## 1.3.0
+
+- Abre directamente en Inicio.
+- Añade tres escenarios con decisiones en orden, efectos, repaso de mecánicas y comparación de estrategias.
+- Guarda planes por navegador con GET, POST, PATCH y DELETE en Supabase.
+- Agrupa la instalación y la prueba de notificaciones en Ajustes.
