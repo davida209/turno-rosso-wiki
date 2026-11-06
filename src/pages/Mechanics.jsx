@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { mechanics } from '../data/mockData.js'
 import shelf from '../assets/mecanicas/Estante_ConProductos.png'
 import box from '../assets/mecanicas/Caja_Carton.png'
@@ -21,6 +23,11 @@ const illustrations = {
 }
 
 export default function Mechanics() {
+  const { hash } = useLocation()
+  useEffect(() => {
+    document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' })
+  }, [hash])
+
   return (
     <div className="page mechanics-page">
       <header className="page-header">

@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext.jsx'
 export default function AppStatus(){
- const {user}=useAuth()
  const [online,setOnline]=useState(navigator.onLine)
  const [ready,setReady]=useState(false)
  const [waiting,setWaiting]=useState(null)
@@ -21,5 +19,5 @@ export default function AppStatus(){
   return()=>{alive=false;window.removeEventListener('online',update);window.removeEventListener('offline',update)}
  },[])
  function applyUpdate(){navigator.serviceWorker.addEventListener('controllerchange',()=>window.location.reload(),{once:true});waiting.postMessage('SKIP_WAITING')}
- return <><div className="app-status"><span><i className={online?'connection-dot':'connection-dot offline'}/>{online?(ready?'Lista sin conexión':'En línea'):'Sin conexión · modo local'}</span><Link to="/cuenta">{user?'Mi cuenta':'Invitado / Entrar'} ↗</Link></div>{waiting&&<div className="update-banner" role="status">Hay una versión nueva.<button onClick={applyUpdate}>Actualizar</button></div>}</>
+ return <><div className="app-status"><span><i className={online?'connection-dot':'connection-dot offline'}/>{online?(ready?'Lista sin conexión':'En línea'):'Sin conexión · modo local'}</span><Link to="/ajustes">Ajustes ↗</Link></div>{waiting&&<div className="update-banner" role="status">Hay una versión nueva.<button onClick={applyUpdate}>Actualizar</button></div>}</>
 }

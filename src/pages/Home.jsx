@@ -2,19 +2,17 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const tiles = [
-  {to:'/notas',title:'Mi bitácora',description:'Guarda estrategias y pendientes, incluso sin conexión.',accent:'gold'},
-  {to:'/cuenta',title:'Mi cuenta',description:'Sincroniza tus notas, instala la app y activa recordatorios.',accent:'rosso'},
+  {
+    to: '/simulador',
+    title: 'Simulador de turnos',
+    description: 'Prueba decisiones bajo presión y compara tus estrategias.',
+    accent: 'gold',
+  },
   {
     to: '/mecanicas',
     title: 'Mecánicas',
     description: 'Cómo reponer anaqueles, limpiar, cobrar y evitar al ladrón.',
     accent: 'rosso',
-  },
-  {
-    to: '/marcador',
-    title: 'Marcador global',
-    description: 'Consulta los resultados verificados y tu historial de partidas.',
-    accent: 'gold',
   },
   {
     to: '/personajes',
@@ -28,7 +26,8 @@ export default function Home() {
   return (
     <div className="page">
       <header className="page-header">
-        <p className="eyebrow">Hola, encargado</p>
+        <img className="home-brand" src="/logo-rosso.png" alt="Rosso Games" />
+        <p className="eyebrow">Guía del encargado</p>
         <h1>Turno Rosso Wiki</h1>
       </header>
 
