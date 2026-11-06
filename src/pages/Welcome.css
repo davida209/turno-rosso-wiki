@@ -80,9 +80,8 @@
   border-radius: 26px;
 }
 
-.welcome-footnote {
-  margin-top: auto;
-  padding-top: 28px;
-  font-size: 12px;
-  color: rgba(251, 245, 230, 0.45);
+.welcome-studio-logo {
+  width: 94px;
+  height: auto;
+  margin-top: 20px;
 }
