@@ -1,22 +1,49 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { mechanics } from '../data/mockData.js'
-import shelf from '../assets/mecanicas/Estante_ConProductos.png'
-import box from '../assets/mecanicas/Caja_Carton.png'
-import mop from '../assets/mecanicas/Trapeador.png'
-import sign from '../assets/mecanicas/Senal_PisoMojado.png'
-import register from '../assets/mecanicas/Caja_Registradora.png'
-import thief from '../assets/personajes/NPC/Ladron/Reposo/Abajo/Ladron_Reposo_Abajo_01.png'
-import owner from '../assets/personajes/NPC/Dueno/Reposo/Abajo/Dueno_Reposo_Abajo_01.png'
-import customer1 from '../assets/personajes/NPC/Cliente01/Reposo/Abajo/Cliente01_Reposo_Abajo_01.png'
-import customer2 from '../assets/personajes/NPC/Cliente02/Reposo/Abajo/Cliente02_Reposo_Abajo_01.png'
-import customer3 from '../assets/personajes/NPC/Cliente03/Reposo/Abajo/Cliente03_Reposo_Abajo_01.png'
+import shelf from '../assets/mechanics-current/anaquel.webp'
+import counter from '../assets/mechanics-current/mostrador.webp'
 import './Mechanics.css'
 
+const actionSprites = import.meta.glob('../assets/mechanics-current/*.webp', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
+function action(name) {
+  return {
+    animated: actionSprites[`../assets/mechanics-current/${name}.webp`],
+    still: actionSprites[`../assets/mechanics-current/${name}-quieto.webp`],
+  }
+}
+
+const carry = action('cargar')
+const cleaning = action('limpiar')
+const thief = action('ladron')
+const owner = action('dueno')
+const customer1 = action('cliente-1')
+const customer2 = action('cliente-2')
+const customer3 = action('cliente-3')
+
+function MechanicSprite({ sprite, index }) {
+  const className = `mechanic-sprite sprite-${index}`
+  if (typeof sprite === 'string') {
+    return <img className={className} src={sprite} alt="" loading="lazy" />
+  }
+
+  return (
+    <picture className={className}>
+      <source media="(prefers-reduced-motion: reduce)" srcSet={sprite.still} />
+      <img src={sprite.animated} alt="" loading="lazy" />
+    </picture>
+  )
+}
+
 const illustrations = {
-  reponer: { label: 'Una caja de inventario junto a un anaquel abastecido', images: [box, shelf], tag: 'Inventario', tip: 'Revisa qué anaqueles necesitan productos antes de ir a la bodega.' },
-  limpieza: { label: 'Trapeador y señal de piso mojado de la tienda', images: [mop, sign], tag: 'Mantenimiento', tip: 'Mantén el piso limpio durante el turno.' },
-  ladron: { label: 'El ladrón junto a la caja registradora', images: [thief, register], tag: 'Alerta', tip: 'No pierdas de vista la caja registradora.' },
+  reponer: { label: 'El Encargado lleva una caja hacia un anaquel de la tienda', images: [carry, shelf], tag: 'Inventario', tip: 'Revisa qué anaqueles necesitan productos antes de ir a la bodega.' },
+  limpieza: { label: 'El Encargado limpia el piso con el trapeador', images: [cleaning], tag: 'Mantenimiento', tip: 'Mantén el piso limpio durante el turno.' },
+  ladron: { label: 'El Ladrón roba junto al mostrador de cobro', images: [thief, counter], tag: 'Alerta', tip: 'No pierdas de vista la caja registradora.' },
   reputacion: { label: 'Clientes de la tienda cuya satisfacción influye en la reputación', images: [customer1, customer3], tag: 'Tu tienda', tip: 'Limpieza, productos y buena atención ayudan a cuidar la reputación.' },
   clientes: { label: 'Los tres compradores que visitan la tienda', images: [customer1, customer2, customer3], tag: 'Atención', tip: 'Procura que encuentren productos disponibles.' },
   auditoria: { label: 'El dueño inspecciona los anaqueles de la tienda', images: [owner, shelf], tag: 'Inspección', tip: 'Una tienda bien cuidada te prepara para una visita sorpresa.' },
@@ -43,7 +70,9 @@ export default function Mechanics() {
               <div className="mechanic-art" role="img" aria-label={art.label}>
                 <span className="mechanic-category">{art.tag}</span>
                 <span className="mechanic-number" aria-hidden="true">0{index + 1}</span>
-                <div className="mechanic-sprites" aria-hidden="true">{art.images.map((src, i) => <img key={src} className={`mechanic-sprite sprite-${i}`} src={src} alt="" loading="lazy" />)}</div>
+                <div className="mechanic-sprites" aria-hidden="true">
+                  {art.images.map((sprite, index) => <MechanicSprite key={index} sprite={sprite} index={index} />)}
+                </div>
               </div>
               <div className="mechanic-entry">
                 <h2 id={`mechanic-${item.id}`}>{item.title}</h2>
