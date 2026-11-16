@@ -6,12 +6,11 @@
 .mechanic-number{position:absolute;right:16px;top:10px;font-family:var(--font-display);font-size:26px;color:#fbf5e638}
 .mechanic-sprites{position:absolute;inset:40px 16px 15px;display:flex;align-items:flex-end;justify-content:center;gap:16px}
 .mechanic-sprites:before{content:'';position:absolute;bottom:-4px;left:8%;right:8%;height:30px;border-radius:50%;background:#0003;z-index:-1}
-.mechanic-sprite{height:130px;max-width:48%;object-fit:contain;filter:drop-shadow(0 6px 5px #0003)}
-.mechanic-reponer .sprite-0{height:80px;width:85px}
+.mechanic-sprite{height:130px;width:95px;min-width:0;max-width:48%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 6px 5px #0003)}
+.mechanic-sprite img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
 .mechanic-reponer .sprite-1,.mechanic-auditoria .sprite-1{width:170px;height:125px}
-.mechanic-limpieza .sprite-0{height:135px;width:85px}
-.mechanic-limpieza .sprite-1{height:105px;width:100px}
-.mechanic-ladron .sprite-1{height:90px;width:130px}
+.mechanic-limpieza .sprite-0{height:140px;width:160px}
+.mechanic-ladron .sprite-1{height:100px;width:155px}
 .mechanic-clientes .mechanic-sprite{max-width:30%;height:125px}
 .mechanic-clientes .sprite-1{height:137px}
 .mechanic-entry{padding:18px}
